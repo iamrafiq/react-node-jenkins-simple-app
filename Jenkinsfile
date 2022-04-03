@@ -11,7 +11,7 @@ pipeline {
             }
             post {
                 success {
-                    archiveArtifacts artifacts: "build/**"
+                    archiveArtifacts artifacts: "target/**"
                 }
             }
         }
