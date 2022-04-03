@@ -23,8 +23,7 @@ pipeline {
         // }
         stage('Package') {
             steps {
-               archiveArtifacts artifacts: 'target/*.jar'
-            }
+            archiveArtifacts artifacts: '/var/lib/jenkins/workspace/node_pipeline/*.jar', followSymlinks: false            }
         }
     }
 }
