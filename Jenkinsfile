@@ -23,7 +23,7 @@ pipeline {
         // }
         stage('Package') {
             steps {
-=               archiveArtifacts artifacts: 'target/*.jar'
+               archiveArtifacts artifacts: 'target/*.jar'
             }
         }
     }
