@@ -23,7 +23,7 @@ pipeline {
         // }
         stage('Package') {
             steps {
-            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+               archiveArtifacts artifacts: 'build/*.jar', fingerprint: true
             }
         }
     }
