@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Package') {
             steps {
-               archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+               archiveArtifacts artifacts: 'node_pipeline/*.jar', followSymlinks: false
             }
         }
     }
