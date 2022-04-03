@@ -7,10 +7,12 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
+                sh 'npm run clean'
+                sh 'npm run build'
             }
             post {
                 success {
-                    archiveArtifacts 'target/*.zip'
+                    archiveArtifacts 'target/*'
                 }
             }
         }
