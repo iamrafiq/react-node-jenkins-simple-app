@@ -21,5 +21,10 @@ pipeline {
                 sh './jenkins/scripts/kill.sh'
             }
         }
+        stage('Package') {
+            steps {
+               archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+            }
+        }
     }
 }
