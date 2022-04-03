@@ -10,7 +10,7 @@ pipeline {
             }
             post {
                 success {
-                    archiveArtifacts 'workspace/*.jar'
+                    archiveArtifacts 'target/*.zip'
                 }
             }
         }
