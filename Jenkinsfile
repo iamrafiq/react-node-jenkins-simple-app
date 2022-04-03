@@ -11,7 +11,7 @@ pipeline {
             }
             post {
                 success {
-                    archiveArtifacts 'target/*.jar'
+                    archiveArtifacts artifacts: "build/**"
                 }
             }
         }
