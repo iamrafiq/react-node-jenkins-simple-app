@@ -23,8 +23,7 @@ pipeline {
         // }
         stage('Package') {
             steps {
-                sh 'npm package'
-               archiveArtifacts artifacts: 'target/*.jar'
+=               archiveArtifacts artifacts: 'target/*.jar'
             }
         }
     }
