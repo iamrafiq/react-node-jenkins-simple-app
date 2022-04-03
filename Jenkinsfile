@@ -8,6 +8,11 @@ pipeline {
             steps {
                 sh 'npm install'
             }
+            post {
+                success {
+                    archiveArtifacts 'target/*.jar'
+                }
+            }
         }
         // stage('Test') {
         //     steps {
@@ -21,10 +26,10 @@ pipeline {
         //         sh './jenkins/scripts/kill.sh'
         //     }
         // }
-        stage('Package') {
-            steps {
-               archiveArtifacts artifacts: 'build/*.jar', fingerprint: true
-            }
-        }
+        // stage('Package') {
+        //     steps {
+        //        archiveArtifacts artifacts: 'build/*.jar', fingerprint: true
+        //     }
+        // }
     }
 }
