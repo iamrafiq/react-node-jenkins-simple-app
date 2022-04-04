@@ -32,6 +32,13 @@ pipeline {
         //        archiveArtifacts artifacts: 'build/*.jar', fingerprint: true
         //     }
         // }
+         stage('Ziping') {
+            steps {
+                script{
+                    zip archive: true, dir: '', glob: '', zipFile: 'react-app.zip'
+             }
+            }
+        }
          stage('Dockering') {
             steps {
                 // sshPublisher(publishers: [sshPublisherDesc(configName: 'docker-host', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '.', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'build/**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
